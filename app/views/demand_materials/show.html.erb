@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pot:</strong>
+  <%= @demand_material.pot %>
+</p>
+
+<p>
+  <strong>Material:</strong>
+  <%= @demand_material.material %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @demand_material.quantity %>
+</p>
+
+<%= link_to 'Edit', edit_demand_material_path(@demand_material) %> |
+<%= link_to 'Back', demand_materials_path %>

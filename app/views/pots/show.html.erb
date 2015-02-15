@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @pot.user %>
+</p>
+
+<p>
+  <strong>Descritpion:</strong>
+  <%= @pot.descritpion %>
+</p>
+
+<p>
+  <strong>Cash demand:</strong>
+  <%= @pot.cash_demand %>
+</p>
+
+<p>
+  <strong>Cash collected:</strong>
+  <%= @pot.cash_collected %>
+</p>
+
+<p>
+  <strong>Credits collected:</strong>
+  <%= @pot.credits_collected %>
+</p>
+
+<%= link_to 'Edit', edit_pot_path(@pot) %> |
+<%= link_to 'Back', pots_path %>

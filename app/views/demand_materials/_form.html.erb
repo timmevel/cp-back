@@ -1,0 +1,29 @@
+<%= form_for(@demand_material) do |f| %>
+  <% if @demand_material.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@demand_material.errors.count, "error") %> prohibited this demand_material from being saved:</h2>
+
+      <ul>
+      <% @demand_material.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :pot_id %><br>
+    <%= f.text_field :pot_id %>
+  </div>
+  <div class="field">
+    <%= f.label :material_id %><br>
+    <%= f.text_field :material_id %>
+  </div>
+  <div class="field">
+    <%= f.label :quantity %><br>
+    <%= f.text_field :quantity %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

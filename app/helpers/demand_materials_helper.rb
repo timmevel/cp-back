@@ -1,0 +1,2 @@
+module DemandMaterialsHelper
+end

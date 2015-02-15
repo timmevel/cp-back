@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  descritpion: MyText
+  cash_demand: 1.5
+  cash_collected: 1.5
+  credits_collected: 
+
+two:
+  user_id: 
+  descritpion: MyText
+  cash_demand: 1.5
+  cash_collected: 1.5
+  credits_collected: 

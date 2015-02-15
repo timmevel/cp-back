@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pot_id: 
+  material_id: 
+  quantity: 
+
+two:
+  pot_id: 
+  material_id: 
+  quantity: 
