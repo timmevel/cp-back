@@ -1,5 +1,5 @@
-<h1>New demand_material</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', demand_materials_path %>
+<%- model_class = DemandMaterial -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
+</div>
+<%= render :partial => 'form' %>

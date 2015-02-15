@@ -1,29 +1,45 @@
-<%= form_for(@demand_material) do |f| %>
-  <% if @demand_material.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@demand_material.errors.count, "error") %> prohibited this demand_material from being saved:</h2>
+<%= form_for @demand_material, :html => { :class => "form-horizontal demand_material" } do |f| %>
 
-      <ul>
-      <% @demand_material.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <% if @demand_material.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@demand_material.errors.count, "error") %> prohibited this demand_material from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @demand_material.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :pot_id %><br>
-    <%= f.text_field :pot_id %>
+  <div class="control-group">
+    <%= f.label :pot_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :pot_id, :class => 'form-control' %>
+    </div>
+    <%= error_span(@demand_material[:pot_id]) %>
   </div>
-  <div class="field">
-    <%= f.label :material_id %><br>
-    <%= f.text_field :material_id %>
+  <div class="control-group">
+    <%= f.label :material_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :material_id, :class => 'form-control' %>
+    </div>
+    <%= error_span(@demand_material[:material_id]) %>
   </div>
-  <div class="field">
-    <%= f.label :quantity %><br>
-    <%= f.text_field :quantity %>
+  <div class="control-group">
+    <%= f.label :quantity, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :quantity, :class => 'form-control' %>
+    </div>
+    <%= error_span(@demand_material[:quantity]) %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            demand_materials_path, :class => 'btn btn-default' %>
+
 <% end %>

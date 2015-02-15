@@ -1,29 +1,27 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Pot -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @pot.user %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
+  <dd><%= @pot.user_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:descritpion) %>:</strong></dt>
+  <dd><%= @pot.descritpion %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:cash_demand) %>:</strong></dt>
+  <dd><%= @pot.cash_demand %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:cash_collected) %>:</strong></dt>
+  <dd><%= @pot.cash_collected %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:credits_collected) %>:</strong></dt>
+  <dd><%= @pot.credits_collected %></dd>
+</dl>
 
-<p>
-  <strong>Descritpion:</strong>
-  <%= @pot.descritpion %>
-</p>
-
-<p>
-  <strong>Cash demand:</strong>
-  <%= @pot.cash_demand %>
-</p>
-
-<p>
-  <strong>Cash collected:</strong>
-  <%= @pot.cash_collected %>
-</p>
-
-<p>
-  <strong>Credits collected:</strong>
-  <%= @pot.credits_collected %>
-</p>
-
-<%= link_to 'Edit', edit_pot_path(@pot) %> |
-<%= link_to 'Back', pots_path %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              pots_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_pot_path(@pot), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              pot_path(@pot),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

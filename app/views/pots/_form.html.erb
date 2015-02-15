@@ -1,37 +1,59 @@
-<%= form_for(@pot) do |f| %>
-  <% if @pot.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@pot.errors.count, "error") %> prohibited this pot from being saved:</h2>
+<%= form_for @pot, :html => { :class => "form-horizontal pot" } do |f| %>
 
-      <ul>
-      <% @pot.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <% if @pot.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@pot.errors.count, "error") %> prohibited this pot from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @pot.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
+  <div class="control-group">
+    <%= f.label :user_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :user_id, :class => 'form-control' %>
+    </div>
+    <%= error_span(@pot[:user_id]) %>
   </div>
-  <div class="field">
-    <%= f.label :descritpion %><br>
-    <%= f.text_area :descritpion %>
+  <div class="control-group">
+    <%= f.label :descritpion, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :descritpion, :class => 'form-control' %>
+    </div>
+    <%= error_span(@pot[:descritpion]) %>
   </div>
-  <div class="field">
-    <%= f.label :cash_demand %><br>
-    <%= f.text_field :cash_demand %>
+  <div class="control-group">
+    <%= f.label :cash_demand, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :cash_demand, :class => 'form-control' %>
+    </div>
+    <%= error_span(@pot[:cash_demand]) %>
   </div>
-  <div class="field">
-    <%= f.label :cash_collected %><br>
-    <%= f.text_field :cash_collected %>
+  <div class="control-group">
+    <%= f.label :cash_collected, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :cash_collected, :class => 'form-control' %>
+    </div>
+    <%= error_span(@pot[:cash_collected]) %>
   </div>
-  <div class="field">
-    <%= f.label :credits_collected %><br>
-    <%= f.text_field :credits_collected %>
+  <div class="control-group">
+    <%= f.label :credits_collected, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :credits_collected, :class => 'form-control' %>
+    </div>
+    <%= error_span(@pot[:credits_collected]) %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            pots_path, :class => 'btn btn-default' %>
+
 <% end %>
