@@ -1,0 +1,1 @@
+json.extract! @donation_cash, :sender_id, :amount, :pot_id

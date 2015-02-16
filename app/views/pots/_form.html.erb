@@ -25,9 +25,9 @@
   <div class="control-group">
     <%= f.label :descritpion, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :descritpion, :class => 'form-control' %>
+      <%= f.text_field :description, :class => 'form-control' %>
     </div>
-    <%= error_span(@pot[:descritpion]) %>
+    <%= error_span(@pot[:description]) %>
   </div>
   <div class="control-group">
     <%= f.label :cash_demand, :class => 'control-label' %>
@@ -36,21 +36,6 @@
     </div>
     <%= error_span(@pot[:cash_demand]) %>
   </div>
-  <div class="control-group">
-    <%= f.label :cash_collected, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :cash_collected, :class => 'form-control' %>
-    </div>
-    <%= error_span(@pot[:cash_collected]) %>
-  </div>
-  <div class="control-group">
-    <%= f.label :credits_collected, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :credits_collected, :class => 'form-control' %>
-    </div>
-    <%= error_span(@pot[:credits_collected]) %>
-  </div>
-
 
   <%= f.submit nil, :class => 'btn btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

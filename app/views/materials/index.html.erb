@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:type) %></th>
+      <th><%= model_class.human_attribute_name(:type_of_good) %></th>
       <th><%= model_class.human_attribute_name(:image) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -16,8 +16,8 @@
     <% @materials.each do |material| %>
       <tr>
         <td><%= link_to material.id, material_path(material) %></td>
-        <td><%= material.type %></td>
-        <td><%= material.image %></td>
+        <td><%= material.type_of_good %></td>
+        <td><img src="<%= material.image %>" style="width:50px" /></td>
         <td><%=l material.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

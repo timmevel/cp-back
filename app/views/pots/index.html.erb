@@ -7,7 +7,7 @@
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:user_id) %></th>
-      <th><%= model_class.human_attribute_name(:descritpion) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:cash_demand) %></th>
       <th><%= model_class.human_attribute_name(:cash_collected) %></th>
       <th><%= model_class.human_attribute_name(:credits_collected) %></th>
@@ -20,7 +20,7 @@
       <tr>
         <td><%= link_to pot.id, pot_path(pot) %></td>
         <td><%= pot.user_id %></td>
-        <td><%= pot.descritpion %></td>
+        <td><%= pot.description %></td>
         <td><%= pot.cash_demand %></td>
         <td><%= pot.cash_collected %></td>
         <td><%= pot.credits_collected %></td>

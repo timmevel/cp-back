@@ -1,0 +1,33 @@
+/* universal */
+
+@import url(http://fonts.googleapis.com/css?family=Baumans);
+
+.page-header h1, .navbar-nav li {
+	font-family: Baumans;
+	color: gray;
+	font-size: 1.6em;
+	padding: 5px 10px;
+}
+
+/* ================================================ */
+html {
+  overflow-y: scroll;
+}
+
+.navbar-nav {
+	height: 70px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+
+footer {
+	text-align: center;
+
+}

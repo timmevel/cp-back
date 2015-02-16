@@ -3,7 +3,7 @@ class CreateDonationCashes < ActiveRecord::Migration
     create_table :donation_cashes do |t|
       t.references :sender
       t.float :amount
-      t.references :recipient
+      t.references :pot
 
       t.timestamps
     end

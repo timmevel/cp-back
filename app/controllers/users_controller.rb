@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+# On saute une etape de securite si on appel BOOK en JSON
+  skip_before_action :verify_authenticity_token, only: [:new, :create, :show, :edit, :update, :destroy]
   # GET /users
   # GET /users.json
   def index
@@ -69,6 +71,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:fname, :lname, :date_of_birth, :credits)
+      params.require(:user).permit(:fname, :lname, :date_of_birth, :email, :password, :credits)
     end
 end

@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  
+  get 'home/index' => 'home#view'
+
+  get '/donations' => 'donations#index'
+
+  # The post routes that allow to donate cash/credit/material and keep track of the donations on each pot
+  post '/pots/:id/donate_cash' => 'pots#donate_cash', as: 'donate_cash'
+  post '/pots/:id/donate_credit' => 'pots#donate_credit', as: 'donate_credit'
+
+
   resources :demand_materials
 
   resources :materials
@@ -11,7 +21,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'pots#index'
+  root 'home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
