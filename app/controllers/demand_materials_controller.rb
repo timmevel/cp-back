@@ -61,6 +61,10 @@ class DemandMaterialsController < ApplicationController
     end
   end
 
+  def get_pot
+    @demands = DemandMaterial.where("pot_id = ?", pot_params[:pot_id])
+  end 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_demand_material
@@ -70,5 +74,9 @@ class DemandMaterialsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def demand_material_params
       params.require(:demand_material).permit(:pot_id, :material_id, :quantity)
+    end
+
+    def pot_params
+      params.permit(:pot_id)
     end
 end

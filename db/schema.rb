@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20150211164824) do
   add_index "demand_materials", ["pot_id"], name: "index_demand_materials_on_pot_id"
 
   create_table "donation_cashes", force: true do |t|
-    t.integer  "sender_id"
+    t.integer  "user_id"
     t.float    "amount"
     t.integer  "pot_id"
     t.datetime "created_at"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20150211164824) do
   end
 
   create_table "donation_credits", force: true do |t|
-    t.integer  "sender_id"
+    t.integer  "user_id"
     t.integer  "quantity"
     t.integer  "pot_id"
     t.datetime "created_at"
@@ -41,10 +41,10 @@ ActiveRecord::Schema.define(version: 20150211164824) do
   end
 
   create_table "donation_materials", force: true do |t|
-    t.integer  "sender_id"
+    t.integer  "user_id"
     t.integer  "material_id"
     t.integer  "quantity"
-    t.integer  "recipient_id"
+    t.integer  "pot_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,1 +1,1 @@
-json.extract! @donation_credit, :sender_id, :quantity, :pot_id
+json.extract! @donation_credit, :user_id, :quantity, :pot_id

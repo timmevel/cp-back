@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th><%= model_class1.human_attribute_name(:id) %></th>
-      <th><%= model_class1.human_attribute_name(:sender_id) %></th>
+      <th><%= model_class1.human_attribute_name(:user_id) %></th>
       <th><%= model_class1.human_attribute_name(:amount) %></th>
       <th><%= model_class1.human_attribute_name(:pot_id) %></th>
       <th><%= model_class1.human_attribute_name(:created_at) %></th>
@@ -16,7 +16,7 @@
     <% @donation_cashes.each do |donation_cash| %>
       <tr>
         <td><%= donation_cash.id %></td>
-        <td><%= donation_cash.sender_id %></td>
+        <td><%= donation_cash.user_id %></td>
         <td><%= donation_cash.amount %></td>
         <td><%= donation_cash.pot_id %></td>
         <td><%=l donation_cash.created_at %></td>
@@ -33,7 +33,7 @@
   <thead>
     <tr>
       <th><%= model_class2.human_attribute_name(:id) %></th>
-      <th><%= model_class2.human_attribute_name(:sender_id) %></th>
+      <th><%= model_class2.human_attribute_name(:user_id) %></th>
       <th><%= model_class2.human_attribute_name(:material_id) %></th>
       <th><%= model_class2.human_attribute_name(:quantity) %></th>
       <th><%= model_class2.human_attribute_name(:recipient_id) %></th>
@@ -45,7 +45,7 @@
     <% @donation_materials.each do |donation_material| %>
       <tr>
         <td><%= link_to donation_material.id, donation_material_path(donation_material) %></td>
-        <td><%= donation_material.sender_id %></td>
+        <td><%= donation_material.user_id %></td>
         <td><%= donation_material.material_id %></td>
         <td><%= donation_material.quantity %></td>
         <td><%= donation_material.recipient_id %></td>
@@ -63,7 +63,7 @@
   <thead>
     <tr>
       <th><%= model_class3.human_attribute_name(:id) %></th>
-      <th><%= model_class3.human_attribute_name(:sender_id) %></th>
+      <th><%= model_class3.human_attribute_name(:user_id) %></th>
       <th><%= model_class3.human_attribute_name(:quantity) %></th>
       <th><%= model_class3.human_attribute_name(:pot_id) %></th>
       <th><%= model_class3.human_attribute_name(:created_at) %></th>
@@ -74,7 +74,7 @@
     <% @donation_credits.each do |donation_credit| %>
       <tr>
         <td><%= donation_credit.id %></td>
-        <td><%= donation_credit.sender_id %></td>
+        <td><%= donation_credit.user_id %></td>
         <td><%= donation_credit.quantity %></td>
         <td><%= donation_credit.pot_id %></td>
         <td><%=l donation_credit.created_at %></td>

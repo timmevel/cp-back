@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   post '/pots/:id/donate_cash' => 'pots#donate_cash', as: 'donate_cash'
   post '/pots/:id/donate_credit' => 'pots#donate_credit', as: 'donate_credit'
 
+  get '/demand_materials/get_pot/:pot_id' => 'demand_materials#get_pot', as: 'get_pot'
 
   resources :demand_materials
 

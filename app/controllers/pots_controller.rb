@@ -69,7 +69,9 @@ class PotsController < ApplicationController
   # This method allows a user to donate cash to a pot
   def donate_cash
       @donation_cash = DonationCash.new(donation_cash_params)
+      @sender = User.find(@donation_cash.user_id)
       @donation_cash.pot = @pot
+      @donation_cash.user = @sender
       @pot.cash_collected = @pot.cash_collected + @donation_cash.amount
 
       respond_to do |format|
@@ -84,7 +86,9 @@ class PotsController < ApplicationController
   # This method allows a user to donate a credit to a pot
   def donate_credit
       @donation_credit = DonationCredit.new(donation_credit_params)
+      @sender = User.find(@donation_credit.user_id)
       @donation_credit.pot = @pot
+      @donation_credit.user = @sender
       @pot.credits_collected = @pot.credits_collected + @donation_credit.quantity
 
       respond_to do |format|
@@ -105,12 +109,12 @@ class PotsController < ApplicationController
 
     # Here we recognize the person logged in and sending the donation
     def donation_cash_params
-      params.require(:donation_cash).permit(:sender_id, :amount)
+      params.require(:donation_cash).permit(:user_id, :amount)
     end
 
     # Here we recognize the person logged in and sending the donation
     def donation_credit_params
-      params.require(:donation_credit).permit(:sender_id, :quantity)
+      params.require(:donation_credit).permit(:user_id, :quantity)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
