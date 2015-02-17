@@ -100,6 +100,23 @@ class PotsController < ApplicationController
       end
   end
 
+  # def donate_material
+  #     @donation_material = DonationMaterial.new(donation_material_params)
+  #     @sender = User.find(@donation_material.user_id)
+  #     @material = Material.find(@donation_material.material_id)
+  #     @donation_material.pot = @pot
+  #     @donation_material.user = @sender
+  #     @donation_material.material = @material
+
+  #     respond_to do |format|
+  #       if @donation_material.save && @pot.save
+  #         format.json
+  #       else
+  #         format.json { render json: @donation_credit.errors, status: :unprocessable_entity }
+  #       end
+  #     end
+  # end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -116,6 +133,10 @@ class PotsController < ApplicationController
     def donation_credit_params
       params.require(:donation_credit).permit(:user_id, :quantity)
     end
+
+    # def donation_material_params
+    #   params.require(:donation_material).permit(:user_id, :material_id, :quantity)
+    # end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pot_params
